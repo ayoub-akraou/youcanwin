@@ -1,5 +1,12 @@
+import NavBar from "./components/NavBar";
+
 function App() {
-	return <p className="text-9xl text-red-500">test</p>;
+	return (
+		<>
+			<NavBar />
+			<div className="container px-4 mt-16"></div>
+		</>
+	);
 }
 
 export default App;
