@@ -3,7 +3,7 @@ import arrow from "../assets/arrow-right.svg";
 
 export default function NavBar() {
 	return (
-		<nav className="p-4  text-sm font-medium shadow-md sticky top-0 left-0 w-full">
+		<nav className="p-4 bg-white z-50 text-sm font-medium shadow-md sticky top-0 left-0 w-full">
 			<div className="container flex items-center">
 				<div className="logo">
 					<img src={logo} alt="" />
