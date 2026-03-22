@@ -1,6 +1,5 @@
 import logo from "../assets/logo.svg";
-import arrow from "../assets/arrow-right.svg";
-
+import Button from "./Button.tsx";
 export default function NavBar() {
 	return (
 		<nav className="p-4 bg-white z-50 text-sm font-medium shadow-md sticky top-0 left-0 w-full">
@@ -35,10 +34,7 @@ export default function NavBar() {
 						</a>
 					</li>
 				</ul>
-				<button className="flex gap-2 ml-3 cursor-pointer active:scale-95 px-5 py-2.5 bg-linear-90 from-[#16A34A] to-[#0B6B3A] shadow-md text-white rounded-md">
-					<p>Demander une démo</p>
-					<img src={arrow} alt="right arrow" />
-				</button>
+				<Button text="Demander une démo" />
 			</div>
 		</nav>
 	);
