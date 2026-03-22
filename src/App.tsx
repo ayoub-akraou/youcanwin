@@ -3,6 +3,7 @@ import NavBar from "./components/NavBar";
 import SolutionSection from "./components/SolutionSection";
 import CustomerJourneySection from "./components/CustomerJourneySection";
 import SalesToExperienceSection from "./components/SalesToExperienceSection";
+import BackofficeSection from "./components/BackofficeSection";
 
 function App() {
 	return (
@@ -14,6 +15,7 @@ function App() {
 				<CustomerJourneySection />
 			</div>
 			<SalesToExperienceSection />
+			<BackofficeSection />
 		</>
 	);
 }
