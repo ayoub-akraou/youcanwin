@@ -1,0 +1,18 @@
+export default function Flash({ color, width, height }: { color?: string; width?: string; height?: string }) {
+	return (
+		<svg
+			width={width ? width : "32"}
+			height={height ? height : "32"}
+			viewBox="0 0 32 32"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg">
+			<path
+				d="M17.3333 13.3333V4L5.33334 18.6667H14.6667V28L26.6667 13.3333H17.3333Z"
+				stroke={color ? color : "white"}
+				stroke-width="2.66667"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+			/>
+		</svg>
+	);
+}

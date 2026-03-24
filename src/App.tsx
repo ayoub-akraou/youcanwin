@@ -4,6 +4,7 @@ import SolutionSection from "./components/SolutionSection";
 import CustomerJourneySection from "./components/CustomerJourneySection";
 import SalesToExperienceSection from "./components/SalesToExperienceSection";
 import BackofficeSection from "./components/BackofficeSection";
+import PlansSection from "./components/PlansSection";
 
 function App() {
 	return (
@@ -16,6 +17,7 @@ function App() {
 			</div>
 			<SalesToExperienceSection />
 			<BackofficeSection />
+			<PlansSection />
 		</>
 	);
 }

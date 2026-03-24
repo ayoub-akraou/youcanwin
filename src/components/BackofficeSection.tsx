@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import settings from "../assets/settings.svg";
 import qrCode from "../assets/qr-code.svg";
 import group from "../assets/group.svg";
@@ -13,80 +14,64 @@ import Button from "./Button";
 
 export default function BackofficeSection() {
 	return (
-		<section className=" bg-[#F5F5F5]">
-			<div className="p-20 contanier px-4">
-				<div className="w-fit mb-4 mx-auto px-4 py-1.5 rounded-full bg-[#DCFCE7] text-sm font-medium text-[#0B6B3A]">
+		<section className="bg-[#F5F5F5]">
+			<div className="container px-4 py-20">
+				<div className="mx-auto mb-4 w-fit rounded-full bg-[#DCFCE7] px-4 py-1.5 text-sm font-medium text-[#0B6B3A]">
 					<img className="mr-2 inline-block" src={settings} alt="settings icon" />
 					Backoffice tout-en-un
 				</div>
-				<h1 className="text-4xl font-bold text-center mb-4">Gérez tout depuis une interface unique</h1>
-				<p className="text-lg text-[#475569] mb-12 text-center">
-					Notre backoffice intuitif vous permet de créer, configurer et piloter vos campagnes en toute autonomie
+				<h1 className="mb-4 text-center text-4xl font-bold">Gerez tout depuis une interface unique</h1>
+				<p className="mb-12 text-center text-lg text-[#475569]">
+					Notre backoffice intuitif vous permet de creer, configurer et piloter vos campagnes en toute autonomie
 				</p>
 
-				<ul className="grid grid-cols-4 gap-8 mb-12">
-					<Card
-						title="Générateur QR Codes"
-						description="Créez et téléchargez vos QR
-                  codes uniques en masse">
-						<img src={qrCode} alt="" />
+				<ul className="mb-12 grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+					<Card title="Generateur QR Codes" description="Creez et telechargez vos QR codes uniques en masse">
+						<img src={qrCode} alt="qr code icon" />
 					</Card>
 					<Card
 						title="CRM Participants"
-						description="Collectez et gérez vos
-                  participants avec segmentation avancée">
-						<img src={group} alt="" />
+						description="Collectez et gerez vos participants avec segmentation avancee">
+						<img src={group} alt="group icon" />
 					</Card>
 					<Card
 						title="Configuration jeux"
-						description="Paramétrez entièrement vos jeux :
-                  règles, lots, durée, visuels">
-						<img src={controllers} alt="" />
+						description="Parametrez entierement vos jeux: regles, lots, duree, visuels">
+						<img src={controllers} alt="controllers icon" />
 					</Card>
-					<Card title="Analytics temps réel" description="Suivez vos KPIs : scans, conversions, engagement, ROI">
-						<img src={analytics} alt="" />
+					<Card title="Analytics temps reel" description="Suivez vos KPIs: scans, conversions, engagement, ROI">
+						<img src={analytics} alt="analytics icon" />
 					</Card>
-					<Card
-						title="Gestion des lots"
-						description="Définissez vos récompenses et
-                  gérez les tirages au sort">
-						<img src={gift} alt="" />
+					<Card title="Gestion des lots" description="Definissez vos recompenses et gerez les tirages au sort">
+						<img src={gift} alt="gift icon" />
 					</Card>
-					<Card
-						title="Notifications"
-						description="Envoyez des push, emails et SMS
-                  à vos participants">
-						<img src={clock} alt="" />
+					<Card title="Notifications" description="Envoyez des push, emails et SMS a vos participants">
+						<img src={clock} alt="clock icon" />
 					</Card>
-					<Card
-						title="Export données"
-						description="Téléchargez vos données en CSV,
-                  Excel ou via API">
-						<img src={download} alt="" />
+					<Card title="Export donnees" description="Telechargez vos donnees en CSV, Excel ou via API">
+						<img src={download} alt="download icon" />
 					</Card>
-					<Card
-						title="Multi-campagnes"
-						description="Gérez plusieurs campagnes
-                  simultanément">
-						<img src={liste} alt="" />
+					<Card title="Multi-campagnes" description="Gerez plusieurs campagnes simultanement">
+						<img src={liste} alt="list icon" />
 					</Card>
 				</ul>
-				<Button text="Demander un accès au backoffice" className="mx-auto!" />
+				<Button text="Demander un acces au backoffice" className="mx-auto" />
 			</div>
-			<ul className="py-7 px-32 flex justify-between bg-white *:border-none *:flex *:flex-col *:items-center">
-				<Card title="Utilisateurs" description="De 1K à illimité ">
+
+			<ul className="flex flex-wrap justify-between gap-6 bg-white px-8 py-7 md:px-16 lg:flex-nowrap lg:px-32">
+				<Card className="flex-1 border-none text-center" title="Utilisateurs" description="De 1K a illimite">
 					<img src={group} alt="group icon" />
 				</Card>
-				<Card title="QR Codes" description="Volume adapté">
+				<Card className="flex-1 border-none text-center" title="QR Codes" description="Volume adapte">
 					<img src={qrCode} alt="qr-code icon" />
 				</Card>
-				<Card title="Couverture" description="Local à mondial">
-					<img src={earth} alt="eart icon" />
+				<Card className="flex-1 border-none text-center" title="Couverture" description="Local a mondial">
+					<img src={earth} alt="earth icon" />
 				</Card>
-				<Card title="Albums" description="Standard ou custom">
+				<Card className="flex-1 border-none text-center" title="Albums" description="Standard ou custom">
 					<img src={liste} alt="list icon" />
 				</Card>
-				<Card title="Infrastructure" description="Cloud ou On-Premise">
+				<Card className="flex-1 border-none text-center" title="Infrastructure" description="Cloud ou On-Premise">
 					<img src={cloud} alt="cloud icon" />
 				</Card>
 			</ul>
@@ -94,11 +79,18 @@ export default function BackofficeSection() {
 	);
 }
 
-function Card({ title, description, className, children }) {
+type CardProps = {
+	title: string;
+	description: string;
+	className?: string;
+	children: ReactNode;
+};
+
+function Card({ title, description, className = "", children }: CardProps) {
 	return (
-		<li className={`border p-6 border-[#E2E8F0] bg-white rounded-xl ${className}`}>
-			<div className="icon mb-4 w-fit p-2.5 rounded-lg bg-[#F0FDF4]">{children}</div>
-			<h4 className="font-semibold text-base mb-2">{title}</h4>
+		<li className={`rounded-xl border border-[#E2E8F0] bg-white p-6 ${className}`}>
+			<div className="icon mb-4 w-fit rounded-lg bg-[#F0FDF4] p-2.5">{children}</div>
+			<h4 className="mb-2 text-base font-semibold">{title}</h4>
 			<p className="description text-sm text-[#475569]">{description}</p>
 		</li>
 	);
